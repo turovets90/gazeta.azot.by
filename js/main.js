@@ -20,6 +20,16 @@ $(document).ready(function(){
     });
 
 
+    if($('.banners_sidebar_slider .banner_link').length >1){
+        $('.banners_sidebar_slider').slick({
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            arrows: true,
+            infinite:false,
+        });
+    }
+
+
     /*
 
 
