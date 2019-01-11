@@ -387,6 +387,9 @@ header{
           background: #fff;
           position: relative;
           margin: 0 3px;
+          &:hover{
+            background: rgba(255, 255, 255, 0.7);
+          }
           &:before{
             .b_a();
             .m_a();
@@ -617,6 +620,9 @@ main{
 
   &.category_sidebar{
     margin-bottom: 22px;
+    @media (max-width:767px){
+      margin-bottom: 15px;
+    }
     .category_name{
       font-size: 14px;
     }
@@ -1224,6 +1230,7 @@ h2, .h2{
   font-size: 24px;
   font-weight: bold;
   color: #333;
+margin-top: 15px;
   @media (max-width:991px){
     font-size: 22px;
   }
@@ -1256,7 +1263,10 @@ picture.float_left{
   .c_list{
     margin-top: 10px;
     &.flex{
-      .flex();
+      @media (min-width:1200px){
+        .flex();
+      }
+
       li{
         margin-right: 30px;
       }
@@ -1311,6 +1321,10 @@ picture.float_left{
 
 .type_radio_archive{
   position: relative;
+  margin-bottom: 30px;
+  @media (max-width:767px){
+    margin-bottom: 20px;
+  }
   .download_link{
     display: inline-block;
     width: 100%;
@@ -1363,6 +1377,9 @@ picture.float_left{
     position: absolute;
     right: -10px;
     top: 0;
+    @media (max-width:1200px){
+      display: none;
+    }
   }
   .section_title {
     color: #fff;
@@ -1377,12 +1394,31 @@ picture.float_left{
 
   .contact_form{
     max-width: 460px;
+    @media (max-width:1200px){
+      max-width: 100%;
+    }
     .field{
       margin-bottom: 20px;
     }
     textarea{
       height: 87px;
     }
+
+
+    .btn_default_white{
+
+      &:hover{
+        background: #6F95BB;
+        border: 2px solid #6F95BB;
+        color: #fff;
+      }
+      &:focus{
+        background: #6F95BB;
+        border: 2px solid #6F95BB;
+      }
+    }
+
+
     .form-control{
       border-radius: 0;
       border:0;
@@ -1437,4 +1473,140 @@ picture.float_left{
 
 .section_radio_archive{
   margin-bottom: 40px;
+  > .text-right{
+    margin-top: -25px;
+  }
+}
+
+
+
+.order_of_congratulations{
+  position: relative;
+  border: 1px solid #C8C8C8;
+  display: inline-block;
+  background: #fff;
+  margin-bottom: 30px;
+  @media (max-width:767px){
+    margin-bottom: 20px;
+  }
+  .category_name{
+    color: #fff;
+    text-transform: uppercase;
+    background: #0F4F8D;
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 16px;
+    padding: 4px 10px;
+    z-index: 9;
+  }
+  .desc{
+    padding: 20px;
+    p{
+      color: #333;
+      font-size:18px;
+      font-weight: bold;
+    }
+  }
+}
+
+
+
+.btn_default_blue{
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 16px;
+  border: 2px solid @blue;
+  background: none;
+  padding: 6px 40px;
+  cursor: pointer;
+  background: @blue;
+  .transition(@transition_default);
+  &:hover{
+    background: #fff;
+    border: 2px solid #0F4F8D;
+    color: @blue;
+  }
+  &:focus{
+    color: #6F95BB;
+    background: #fff;
+    border: 2px solid #6F95BB;
+  }
+}
+
+
+.modal-dialog {
+  @media (min-width:576px){
+    max-width: 530px;
+  }
+}
+
+.modal-content{
+  .border-radius(0);
+  border: 1px solid @blue;
+
+
+  .section_title{
+    display: inline-block;
+    font-size: 16px;
+    margin-bottom: 25px;
+  }
+
+
+  .modal-body{
+    padding:47px 37px;
+    position: relative;
+    .close{
+      width: 15px;
+      height: 15px;
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      opacity: 1;
+      &:before, &:after{
+        .b_a();
+        width: 13px;
+        height: 1px;
+        background: @blue;
+        .m_a();
+        opacity: 1;
+      }
+      &:before{
+        .transform(rotate(45deg));
+      }
+      &:after{
+        .transform(rotate(-45deg));
+      }
+    }
+  }
+
+  .modal_form{
+    .field{
+      margin-bottom: 15px;
+    }
+    textarea{
+      height: 87px;
+    }
+    .form-control{
+      border: 2px solid #C8C8C8;
+      .border-radius(0);
+      &::-webkit-input-placeholder{
+        color: #C4C4C4;
+        font-size: 16px;
+      }
+      &:-moz-placeholder{ color: #C4C4C4;
+        font-size: 16px;}
+      &:-ms-input-placeholder{ color: #C4C4C4;
+        font-size: 16px;}
+      &::-moz-placeholder{
+        color: #C4C4C4;
+        font-size: 16px;
+      }
+      &::-ms-input-placeholder{
+        color: #C4C4C4;
+        font-size: 16px;
+      }
+    }
+  }
+
 }
